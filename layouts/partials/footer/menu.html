@@ -1,6 +1,13 @@
 
 {{- if .Site.Menus.footer -}}
-<ul class="nav justify-content-between footer-memu mb-3 row">
+<ul class="nav footer-menu justify-content-center mx-auto mb-3 border-bottom border-1" style="width: fit-content;">
+  {{- range .Site.Menus.footer -}}
+  <li class="nav-item">
+    {{- template "footer-menu-item" (dict "item" .) -}}
+  </li>
+  {{- end -}}
+</ul>
+<!-- <ul class="nav justify-content-between footer-memu mb-3 row">
   {{- range .Site.Menus.footer -}}
   <li class="nav-item col-12 col-md-6 col-lg-3 px-0">
     {{- if .HasChildren -}}
@@ -25,7 +32,7 @@
     {{- end -}}
   </li>
   {{- end -}}
-</ul>
+</ul> -->
 {{- end -}}
 
 {{- define "footer-menu-item" -}}
