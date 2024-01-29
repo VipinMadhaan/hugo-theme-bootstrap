@@ -40,7 +40,7 @@
 {{- $title := partial "helpers/menu-name" .item }}
 {{- if .item.URL -}}
 <a class="{{ $class }}" title="{{ $title }}"
-  href="{{ .item.URL }}"{{ if not .item.Page }} target="_blank" rel="noopener noreferrer"{{ end }}>
+  href="{{ .item.URL }}"{{ if not .item.Page }} rel="noopener noreferrer"{{ end }}>
   {{- $title -}}
 </a>
 {{- else -}}
