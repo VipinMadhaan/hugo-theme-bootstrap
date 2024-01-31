@@ -1,4 +1,4 @@
-{{- $anchor := printf "<a class=\"anchor ms-1\" href=\"#%s\"></a>" .Anchor | safeHTML -}}
+{{- $anchor := printf "<a class=\"anchor ms-1\" aria-label=\"%s\" href=\"#%s\"></a>" .Anchor | safeHTML -}}
 {{- $numberifyHeadings := true }}
 {{- if isset .Page.Params "numberifyheadings" }}
   {{- $numberifyHeadings = .Page.Params.numberifyHeadings }}

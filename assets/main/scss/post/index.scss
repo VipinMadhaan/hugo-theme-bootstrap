@@ -13,7 +13,11 @@
   font-size: 0.875rem;
   word-break: break-all;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+  }
   > span {
     &:not(:last-child) {
       margin-right: 0.125rem;
