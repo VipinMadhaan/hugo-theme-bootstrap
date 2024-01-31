@@ -1,0 +1,23 @@
+<div>
+  {{- if (ne .Site.Params.app.noFavicon true) -}}
+  <form
+    action="https://api.follow.it/subscribe?pub=THl8mHgcavUdEveE5G_gW70DbjtVxlC9"
+    method="post"
+    target="_blank"
+    class="subscribe">
+    <h2 class="subscribe__title">Let's keep in touch</h2>
+    <p class="subscribe__copy">
+      Subscribe to keep up with fresh news and exciting updates.
+    </p>
+    <div class="form">
+      <input
+        type="email"
+        name="email"
+        required="required"
+        class="form__email"
+        placeholder="Enter your email address" />
+      <button type="submit" class="form__button">Sign up</button>
+    </div>
+  </form>
+  {{- end -}}
+</div>

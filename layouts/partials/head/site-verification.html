@@ -21,4 +21,13 @@
   {{- with $params.siteVerification.shenma }}
   <meta name="shenma-site-verification" content="{{ . }}">
   {{- end }}
+  {{- with $params.siteVerification.yandex }}
+  <meta name="yandex-verification" content="{{ . }}">
+  {{- end }}
+  {{- with $params.siteVerification.pinterest }}
+  <meta name="p:domain_verify" content="{{ . }}">
+  {{- end }}
+  {{- with $params.siteVerification.followit }}
+  <meta name="follow.it-verification-code" content="{{ . }}">
+  {{- end }}
 {{- end -}}
