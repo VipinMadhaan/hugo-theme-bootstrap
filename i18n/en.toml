@@ -228,7 +228,7 @@ other = "Posts"
 other = "Profile"
 
 [read_more]
-other = "Read More"
+other = "Know Better"
 
 [reading_time]
 other = "{{ .ReadingTime }} min read"

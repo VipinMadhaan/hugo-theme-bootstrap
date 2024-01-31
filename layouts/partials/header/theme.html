@@ -5,7 +5,7 @@
     {{- if not (in (slice "light" "dark" "auto") $mode) }}
       {{- $mode = "auto" }}
     {{- end }}
-    <a class="nav-link px-0 py-2 px-xxl-1" href="#" id="modeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link px-0 py-2 px-xxl-1" href="#" id="modeDropdown" title="Switch Mode" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="mode-icon fas fa-fw fa-{{ (index $modes $mode ).icon }}" id="modeIcon"></i>
         <span class="d-xxl-none">{{ i18n "mode" }}</span>
     </a>
