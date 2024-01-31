@@ -12,7 +12,8 @@
   margin-bottom: 1rem;
   font-size: 0.875rem;
   word-break: break-all;
-
+  display: flex;
+  justify-content: space-between;
   > span {
     &:not(:last-child) {
       margin-right: 0.125rem;

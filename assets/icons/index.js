@@ -40,7 +40,7 @@ import {
   faYoutube,
   faZhihu,
 } from "@fortawesome/free-brands-svg-icons";
-import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { faStar, faClock, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
 import {
   faAdjust,
   faArrowsAltV,
@@ -97,7 +97,7 @@ import {
   faTimes,
   faTv,
   faUndo,
-  faUser,
+  faUser
 } from "@fortawesome/free-solid-svg-icons";
 import { default as customIcons } from "./custom";
 import { faBilibili, faLiberapay, faOffline, faTipeee } from "./icons";
@@ -163,6 +163,8 @@ let icons = [
 
   // Regular Icons
   faStar,
+  faClock, 
+  faCalendarAlt,
 
   // Brands
   faAlipay,
@@ -209,7 +211,7 @@ let icons = [
   faBilibili,
   faLiberapay,
   faOffline,
-  faTipeee,
+  faTipeee
 ];
 
 config.searchPseudoElements = false; // This option will become a performance killer, especially in search page, it tooks a long time to render.
