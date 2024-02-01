@@ -32,6 +32,7 @@
 
 .post-content {
   color: var(--#{$prefix}surface-color);
+  outline: none;
 
   h3 {
     margin-top: 2rem;
