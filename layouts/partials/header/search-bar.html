@@ -2,7 +2,7 @@
   {{- $page := .Site.GetPage "/search" }}
   {{- if ne $page.RelPermalink .RelPermalink -}}
     {{- $shortcut := partialCached "functions/search-shortcut" . }}
-    <hr class="d-xxl-none">
+    <hr class="d-xl-none">
     <form class="search-bar ms-auto my-auto" action="{{ with $page }}{{ .RelPermalink }}{{ end }}" novalidate>
       <div class="input-group align-items-center">
         <span class="btn btn-search disabled position-absolute left-0 border-0 px-1">

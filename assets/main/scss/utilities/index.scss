@@ -7,7 +7,7 @@
   }
 }
 
-.text-xxl-nowrap {
+.text-xl-nowrap {
   @include media-breakpoint-up(xxl) {
     white-space: nowrap !important;
   }

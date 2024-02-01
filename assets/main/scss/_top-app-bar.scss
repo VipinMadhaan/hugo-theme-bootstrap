@@ -15,7 +15,7 @@ $header-caret-width: 0.35em;
   --#{$prefix}form-control-bg: var(--#{$prefix}primary-secondary);
 
   .offcanvas-lg,
-  .offcanvas-xxl {
+  .offcanvas-xl {
     --#{$prefix}offcanvas-bg: var(--#{$prefix}primary);
     --#{$prefix}offcanvas-color: var(--#{$prefix}on-primary);
   }
@@ -135,7 +135,7 @@ $header-caret-width: 0.35em;
       --#{$prefix}form-control-bg: var(--#{$prefix}surface-bg);
 
       .offcanvas-lg,
-      .offcanvas-xxl {
+      .offcanvas-xl {
         --#{$prefix}offcanvas-bg: var(--#{$prefix}surface-bg);
         --#{$prefix}offcanvas-color: var(#{$prefix}surface-color-secondary);
       }

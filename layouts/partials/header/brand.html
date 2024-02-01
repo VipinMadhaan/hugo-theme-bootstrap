@@ -1,5 +1,5 @@
 {{- $logo := (default "images/logo.webp" .Site.Params.logo) }}
-<a class="nav-link d-flex align-items-center flex-grow-1 flex-xxl-grow-0 justify-content-xxl-start{{ if eq .Type "docs" }} justify-content-center{{ end }} ms-2 ms-xxl-0 mx-auto me-xxl-2{{ if .IsHome }} active{{ end }} py-2"
+<a class="nav-link d-flex align-items-center flex-grow-1 flex-xl-grow-0 justify-content-xl-start{{ if eq .Type "docs" }} justify-content-center{{ end }} ms-2 ms-xl-0 mx-auto me-xl-2{{ if .IsHome }} active{{ end }} py-2"
     href="{{ "" | absLangURL }}">
     {{- if $logo }}
     {{ partialCached "helpers/image" (dict "filename" $logo "alt" "Logo" "class" "logo" "resources" .Resources) }}
