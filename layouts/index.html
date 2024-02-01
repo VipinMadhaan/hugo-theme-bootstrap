@@ -1,6 +1,6 @@
 {{ define "content" }}
 {{- partial "carousel" . -}}
-<div class="{{ if default true .Params.sidebar }}col-xxl-8{{ else }}col-xxl-12{{ end }}">
+<div class="{{ if default true .Params.sidebar }}col-xl-8{{ else }}col-xl-12{{ end }}">
   {{ partial "list" . }}
 </div>
 {{- partial "sidebar" . -}}

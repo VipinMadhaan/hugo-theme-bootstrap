@@ -8,7 +8,7 @@ class SidebarToggle implements Component {
 
   key = "sidebar-toggle";
 
-  colClass = "col-xxl-";
+  colClass = "col-xl-";
 
   constructor(public button: HTMLElement) {}
 
