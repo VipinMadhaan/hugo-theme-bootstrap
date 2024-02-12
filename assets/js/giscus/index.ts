@@ -1,19 +1,23 @@
-import * as params from "@params";
-import { default as LocalStorage } from "js/local-storage";
-import ModeToggle from "js/mode";
+import { giscus as giscusParams } from "@params";
+import LocalStorage from "js/local-storage";
 
 class Giscus {
+  constructor() {
+    this.theme = giscusParams.theme;
+  }
+
   run() {
-    const theme = params.giscus.theme;
-    if (!theme) {
-      document.addEventListener("hbs:mode", (e: CustomEvent) => {
-        this.rerender(this.getTheme(e.detail.mode));
-      });
-      setTimeout(() => {
-        this.rerender(this.getTheme(LocalStorage.getItem("mode")));
-      }, 2000);
+    if (!this.theme) {
+      document.addEventListener("hbs:mode", this.handleModeChange);
+      setTimeout(this.handleModeChange, 2000);
     }
   }
+
+  handleModeChange = (e) => {
+    const mode = e && e.detail && e.detail.mode;
+    const theme = this.getTheme(mode || LocalStorage.getItem("mode"));
+    this.rerender(theme);
+  };
 
   getTheme(mode) {
     if (mode === "auto") {
@@ -42,6 +46,9 @@ class Giscus {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  new Giscus().run();
-});
+function initializeGiscus() {
+  const giscus = new Giscus();
+  giscus.run();
+}
+
+document.addEventListener("DOMContentLoaded", initializeGiscus);
