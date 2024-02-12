@@ -1,44 +1,47 @@
 import * as params from "@params";
-import { default as LocalStorage } from "js/local-storage";
+import { LocalStorage } from "js/local-storage";
 import ModeToggle from "js/mode";
 
 class Giscus {
-  run() {
+  constructor() {
     const theme = params.giscus.theme;
     if (!theme) {
-      document.addEventListener("hbs:mode", (e: CustomEvent) => {
-        this.rerender(this.getTheme(e.detail.mode));
-      });
-      setTimeout(() => {
-        this.rerender(this.getTheme(LocalStorage.getItem("mode")));
-      }, 3000);
+      this.handleModeChange();
     }
   }
 
-  getTheme(mode) {
-    if (mode === "auto") {
-      mode = ModeToggle.getPreferredMode();
-    }
-    return mode === "dark" ? "dark" : "light";
+  run() {
+    this.rerender(this.getPreferredTheme());
   }
+
+  getPreferredTheme() {
+    const storedMode = LocalStorage.getItem("mode");
+    return ModeToggle.getPreferredMode(storedMode);
+  }
+
+  handleModeChange = () => {
+    document.addEventListener("hbs:mode", (e) => {
+      this.rerender(this.getPreferredTheme(e.detail.mode));
+    });
+
+    // Initial rerender based on local storage or system preference
+    this.rerender(this.getPreferredTheme());
+  };
 
   rerender(theme) {
-    const iframe = document.querySelector<HTMLIFrameElement>(
-      "iframe.giscus-frame"
-    );
-    if (!iframe) {
-      return;
-    }
-    iframe.contentWindow.postMessage(
-      {
-        giscus: {
-          setConfig: {
-            theme: "https://giscus.app/themes/" + theme + ".css",
+    const iframe = document.querySelector("iframe.giscus-frame");
+    if (iframe) {
+      iframe.contentWindow.postMessage(
+        {
+          giscus: {
+            setConfig: {
+              theme: `https://giscus.app/themes/${theme}.css`,
+            },
           },
         },
-      },
-      "https://giscus.app"
-    );
+        "https://giscus.app"
+      );
+    }
   }
 }
 
