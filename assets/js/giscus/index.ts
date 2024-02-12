@@ -19,21 +19,22 @@ class Giscus {
     if (mode === "auto") {
       mode = ModeToggle.getPreferredMode();
     }
-    return mode === "dark" ? "dark" : "light";
+    return mode === "dark" ? 'dark_protanopia' : 'light_protanopia'
   }
 
   rerender(theme) {
     const iframe = document.querySelector<HTMLIFrameElement>(
       "iframe.giscus-frame"
     );
-    if (!iframe) {
+    if (!iframe || !iframe.contentWindow) {
       return;
     }
+
     iframe.contentWindow.postMessage(
       {
         giscus: {
           setConfig: {
-            theme: "https://giscus.app/themes/" + theme + ".css",
+            theme: theme ,
           },
         },
       },

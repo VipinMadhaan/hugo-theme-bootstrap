@@ -17,7 +17,7 @@
     data-reactions-enabled="{{ if default true .reactions }}1{{ else }}0{{ end }}"
     data-emit-metadata="{{ if default false .metadata }}1{{ else }}0{{ end }}"
     data-input-position="{{ default "top" .inputPosition }}"
-    data-theme="{{ default "preferred_color_scheme" .theme }}"
+    data-theme="{{ if eq .theme "dark" }}dark_protanopia{{ else }}light_protanopia{{ end }}"
     data-lang="{{ $lang }}"
     {{ with default true .lazyLoading }}data-loading="lazy"{{ end }}
     crossorigin="anonymous"
