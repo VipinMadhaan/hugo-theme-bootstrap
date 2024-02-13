@@ -1,4 +1,4 @@
-{{- if default false .Site.Params.share.postShareButtons -}}
+{{- if (and (default false .Site.Params.share.postShareButtons) (default true .Params.postShare)) -}}
 <div class="post-share-container">
   {{- partial "post/share/post-share" . -}}
 </div>
