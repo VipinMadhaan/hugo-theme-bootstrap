@@ -39,6 +39,7 @@ import {
   faXing,
   faYoutube,
   faZhihu,
+  faWhatsapp
 } from "@fortawesome/free-brands-svg-icons";
 import { faStar, faClock, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -206,6 +207,7 @@ let icons = [
   faWeibo,
   faWeixin,
   faZhihu,
+  faWhatsapp,
 
   // Custom Icons
   faBilibili,

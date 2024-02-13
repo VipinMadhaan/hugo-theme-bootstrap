@@ -15,21 +15,12 @@
   <a target="_blank" href="https://www.reddit.com/submit?url={{ $url }}&title={{ $title }}" title="Share on Reddit" class="btn" style="background-color: #ff4500;">
     <i class="fab fa-reddit" style="color:#fff;"></i>
   </a>
-  <a href="javascript:void(0);" onclick="copyToClipboard('{{ $url }}')" title="Copy URL" class="btn" style="background-color: #444;">
-    <i class="fa fa-copy" style="color:#fff;"></i>
+  <a target="_blank" href="https://wa.me/?text={{ $title }} {{ $url }}" title="Share on WhatsApp" class="btn" style="background-color: #25d366;">
+    <i class="fab fa-whatsapp" style="color:#fff;"></i>
   </a>
   <a target="_blank" href="mailto:?subject=Check%20out%20{{ $title }}.&body={{ $body }}" title="Email post" class="btn" style="background-color: #444;">
     <i class="fas fa-envelope" style="color:#fff;"></i>
   </a>
-  <script>
-    function copyToClipboard(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert('URL copied to clipboard');
-      }).catch(err => {
-        console.error('Failed to copy: ', err);
-      });
-    }
-  </script>
 </div>
 <!--
 <ul class="menu bottomRight">
