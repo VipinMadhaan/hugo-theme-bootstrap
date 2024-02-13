@@ -1,0 +1,5 @@
+{{- if default false .Site.Params.share.postShareButtons -}}
+<div class="post-share-container">
+  {{- partial "post/share/post-share" . -}}
+</div>
+{{- end -}}

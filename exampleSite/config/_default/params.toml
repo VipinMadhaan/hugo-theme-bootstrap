@@ -218,7 +218,7 @@ open_collective = "hbs"
 paypal = "razonyang"
 
 #[share]
-#addThis = "" # AddThis pubid.
+#shareThis = "" # ShareThis pubid.
 
 # [actionsPanel]
 # disabled = true

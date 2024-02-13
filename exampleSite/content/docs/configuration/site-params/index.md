@@ -66,7 +66,7 @@ The site parameters are located in `config/_default/params.toml` by default.
 | `reward` | Object | - | [Reward Widget]({{< ref "/docs/widgets/reward" >}}), AKA Buy Me a Coffee Widget.
 | `externalLinkIcon` | Boolean | `true` | Whether to show the icons after the external links.
 | `share` | Object | - | Share buttons
-| `share.addThis` | String | - | [AddThis](https://www.addthis.com)'s `pubid`.
+| `share.shareThis` | String | - | [ShareThis](https://www.sharethis.com)'s `pubid`.
 | `fontSize` | Object | Font Sizes | Comment or remove this parameter to disable font size switcher.
 | `fontSize.small` | String | `.9rem` | Small font size.
 | `fontSize.extraSmall` | String | `.8rem` | Extra small font size.

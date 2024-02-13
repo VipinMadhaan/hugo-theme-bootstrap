@@ -67,7 +67,7 @@ authors = ["RazonYang"]
 | `reward` | Object | - | [打赏小部件]({{< ref "/docs/widgets/reward" >}})，又称 Buy Me a Coffee 小部件。
 | `externalLinkIcon` | Boolean | `true` | 是否显示外部链接后的图标。
 | `share` | Object | - | 分享按钮
-| `share.addThis` | String | - | [AddThis](https://www.addthis.com) `pubid`。
+| `share.shareThis` | String | - | [ShareThis](https://www.sharethis.com) `pubid`。
 | `fontSize` | Object | 字体大小 | 注释或删除此参数可以禁用字体大小切换器。
 | `fontSize.small` | String | `.9rem` | 小字体
 | `fontSize.extraSmall` | String | `.8rem` | 更小的字体

@@ -1,0 +1,82 @@
+{{ $title := .Title }}
+{{ $url := printf "%s" .Permalink | absLangURL }}
+{{ $body := print $title ", by " .Site.Title "\n\n" (.Summary | truncate 200) "\n\n" $url "\n" }}
+<div class="share-menu">
+  <i class="fa fa-share-alt"></i>Share
+  <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ $url }}" title="Share on Facebook" class="btn" style="background-color: #3b5998;">
+    <i class="fab fa-facebook-f" style="color: #fff;"></i>
+  </a>
+  <a target="_blank" href="http://twitter.com/share?url={{ $url }}&text={{ $title }}" title="Share on Twitter" class="btn" style="background-color: #00acee;">
+    <i class="fab fa-twitter" style="color: #fff;"></i>
+  </a>
+  <a target="_blank" href="https://www.linkedin.com/shareArticle?url={{ $url }}&title={{ $title }}" title="Share on Linkedin" class="btn" style="background-color: #0e76a8;">
+    <i class="fab fa-linkedin-in" style="color:#fff;"></i>
+  </a>
+  <a target="_blank" href="https://www.reddit.com/submit?url={{ $url }}&title={{ $title }}" title="Share on Reddit" class="btn" style="background-color: #ff4500;">
+    <i class="fab fa-reddit" style="color:#fff;"></i>
+  </a>
+  <a href="javascript:void(0);" onclick="copyToClipboard('{{ $url }}')" title="Copy URL" class="btn" style="background-color: #444;">
+    <i class="fa fa-copy" style="color:#fff;"></i>
+  </a>
+  <a target="_blank" href="mailto:?subject=Check%20out%20{{ $title }}.&body={{ $body }}" title="Email post" class="btn" style="background-color: #444;">
+    <i class="fas fa-envelope" style="color:#fff;"></i>
+  </a>
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('URL copied to clipboard');
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    }
+  </script>
+</div>
+<!--
+<ul class="menu bottomRight">
+  <li class="share top">
+    <i class="fa fa-share-alt"></i>
+    <ul class="share-submenu">
+      <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a></li>
+      <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+    </ul>
+  </li>
+</ul>
+
+<ul class="share-menu topLeft">
+  <li class="share bottom">
+    <i class="fa fa-share-alt"></i>
+    <ul class="share-submenu">
+      <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a></li>
+      <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+    </ul>
+  </li>
+</ul>
+
+<ul class="menu topRight">
+  <li class="share left">
+    <i class="fa fa-share-alt"></i>
+    <ul class="share-submenu">
+      <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a></li>
+      <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+    </ul>
+  </li>
+</ul>
+
+<ul class="menu bottomLeft">
+  <li class="share right">
+    <i class="fa fa-share-alt"></i>
+    <ul class="share-submenu">
+      <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+      <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a></li>
+      <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+    </ul>
+  </li>
+</ul>
+-->
