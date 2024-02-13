@@ -2,11 +2,15 @@
   bottom: 1.25rem;
   color: var(--#{$prefix}primary);
   transition: opacity 0.5s;
-
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  width: fit-content;
+  height: fit-content;
+  padding: 12px 8px 8px !important;
+  border-radius: 50%;
+  font-size: .8rem;
   &:hover {
     color: var(--#{$prefix}primary-text);
   }
-
   &.scrolling {
     bottom: 100%;
     transition: bottom 1s;
