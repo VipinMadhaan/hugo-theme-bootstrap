@@ -1,10 +1,15 @@
-{{- partialCached "sidebar/profile" . .Site }}
+{{ if not (default true .Params.postSidebar) }}
+  {{ partial "sidebar/search-form" . }}
+{{ end }}
 {{- if ne "content" .Site.Params.tocPosition }}
   {{- partial "sidebar/toc" . }}
 {{- end }}
-{{- partialCached "sidebar/taxonomies-toggle" . }}
-{{- partial "sidebar/posts-toggle" . }}
-{{- partial "sidebar/featured-posts" . .Section }}
-{{- partial "sidebar/recent-posts" . .Section }}
-{{- partialCached "sidebar/taxonomies" . }}
-{{- partialCached "sidebar/archive" . }}
+{{- if default true .Params.postSidebar }}
+  {{- partialCached "sidebar/profile" . .Site }}
+  {{- partialCached "sidebar/taxonomies-toggle" . }}
+  {{- partial "sidebar/posts-toggle" . }}
+  {{- partial "sidebar/featured-posts" . .Section }}
+  {{- partial "sidebar/recent-posts" . .Section }}
+  {{- partialCached "sidebar/taxonomies" . }}
+  {{- partialCached "sidebar/archive" . }}
+{{- end }}
