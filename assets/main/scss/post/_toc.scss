@@ -32,6 +32,12 @@
   }
 
   a {
+    &:before {
+      content: "|";
+      font-weight: bolder;
+      margin-right: 0.4rem;
+      color: var(--#{$prefix}primary);
+    }
     &.active {
       color: var(--#{$prefix}primary);
     }
