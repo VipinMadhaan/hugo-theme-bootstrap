@@ -7,9 +7,9 @@
 {{- if default true .Params.postSidebar }}
   {{- partialCached "sidebar/profile" . .Site }}
   {{- partialCached "sidebar/taxonomies-toggle" . }}
-  {{- partial "sidebar/posts-toggle" . }}
-  {{- partial "sidebar/featured-posts" . .Section }}
-  {{- partial "sidebar/recent-posts" . .Section }}
-  {{- partialCached "sidebar/taxonomies" . }}
-  {{- partialCached "sidebar/archive" . }}
 {{- end }}
+{{- partial "sidebar/posts-toggle" . }}
+{{- partial "sidebar/featured-posts" . .Section }}
+{{- partial "sidebar/recent-posts" . .Section }}
+{{- partialCached "sidebar/taxonomies" . }}
+{{- partialCached "sidebar/archive" . }}
