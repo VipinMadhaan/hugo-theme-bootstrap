@@ -1,7 +1,7 @@
 {{ if not (default true .Params.postSidebar) }}
   {{ partial "sidebar/search-form" . }}
 {{ end }}
-{{- if ne "content" .Site.Params.tocPosition }}
+{{- if and (not (default true .Params.postSidebar)) (ne "content" .Site.Params.tocPosition) }}
   {{- partial "sidebar/toc" . }}
 {{- end }}
 {{- if default true .Params.postSidebar }}
