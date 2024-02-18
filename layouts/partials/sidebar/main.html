@@ -8,6 +8,7 @@
   {{- partialCached "sidebar/profile" . .Site }}
   {{- partialCached "sidebar/taxonomies-toggle" . }}
 {{- end }}
+{{- partial "hooks/sidebar-middle" . }}
 {{- partial "sidebar/posts-toggle" . }}
 {{- partial "sidebar/featured-posts" . .Section }}
 {{- partial "sidebar/recent-posts" . .Section }}
