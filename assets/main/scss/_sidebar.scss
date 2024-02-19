@@ -1,6 +1,6 @@
 .sidebar {
   position: sticky;
-  top: -1rem;
+  top: -1.5rem;
   height: fit-content;
   @if $fixedSidebar {
     @include media-breakpoint-up(lg) {
